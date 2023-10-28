@@ -478,11 +478,11 @@ void pageReplacementWithARB(int *referenceString, int frameSize, int *result) {
             } else {
                 // 設定新替換者 leftmost 為 1
                 frame -> info = 0b10000000;
-
+		
                 Frame *currentFrame = frameList -> head;
                 Frame *targetFrame = currentFrame;
                 int largestInfo = 0b11111111;
-
+		// 抽換bits規則
                 while(currentFrame != NULL) {
                     if(currentFrame -> info <= largestInfo) {
                         targetFrame = currentFrame;
